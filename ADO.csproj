@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{28EEAB18-9895-402A-B7CF-961A9C6F6D1E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ADO</RootNamespace>
+    <AssemblyName>ADO</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JęzykiDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JęzykiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="JęzykiPracownikaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JęzykiPracownikaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Klient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Klient.Designer.cs">
+      <DependentUpon>Klient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KlientDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KlientDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pracownik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pracownik.Designer.cs">
+      <DependentUpon>Pracownik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PracownikDataSet.cs">
+      <DependentUpon>PracownikDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PracownikDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PracownikDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ZamowienieJezykDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZamowienieJezykDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZamowienieKlientDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZamowienieKlientDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZamowieniePracownikDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZamowieniePracownikDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Zamówienia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zamówienia.Designer.cs">
+      <DependentUpon>Zamówienia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZamówienieDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZamówienieDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Klient.resx">
+      <DependentUpon>Klient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pracownik.resx">
+      <DependentUpon>Pracownik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Zamówienia.resx">
+      <DependentUpon>Zamówienia.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="JęzykiDataSet.xsc">
+      <DependentUpon>JęzykiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="JęzykiDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>JęzykiDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="JęzykiDataSet.xss">
+      <DependentUpon>JęzykiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="JęzykiPracownikaDataSet.xsc">
+      <DependentUpon>JęzykiPracownikaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="JęzykiPracownikaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>JęzykiPracownikaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="JęzykiPracownikaDataSet.xss">
+      <DependentUpon>JęzykiPracownikaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="KlientDataSet.xsc">
+      <DependentUpon>KlientDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="KlientDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KlientDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="KlientDataSet.xss">
+      <DependentUpon>KlientDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PracownikDataSet.xsc">
+      <DependentUpon>PracownikDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PracownikDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PracownikDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PracownikDataSet.xss">
+      <DependentUpon>PracownikDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ZamowienieJezykDataSet.xsc">
+      <DependentUpon>ZamowienieJezykDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ZamowienieJezykDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZamowienieJezykDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZamowienieJezykDataSet.xss">
+      <DependentUpon>ZamowienieJezykDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ZamowienieKlientDataSet.xsc">
+      <DependentUpon>ZamowienieKlientDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ZamowienieKlientDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZamowienieKlientDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZamowienieKlientDataSet.xss">
+      <DependentUpon>ZamowienieKlientDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ZamowieniePracownikDataSet.xsc">
+      <DependentUpon>ZamowieniePracownikDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ZamowieniePracownikDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZamowieniePracownikDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZamowieniePracownikDataSet.xss">
+      <DependentUpon>ZamowieniePracownikDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ZamówienieDataSet.xsc">
+      <DependentUpon>ZamówienieDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ZamówienieDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZamówienieDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZamówienieDataSet.xss">
+      <DependentUpon>ZamówienieDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

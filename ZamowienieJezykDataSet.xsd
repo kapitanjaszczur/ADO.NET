@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ZamowienieJezykDataSet" targetNamespace="http://tempuri.org/ZamowienieJezykDataSet.xsd" xmlns:mstns="http://tempuri.org/ZamowienieJezykDataSet.xsd" xmlns="http://tempuri.org/ZamowienieJezykDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BTConnectionStringJęzyki" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BTConnectionStringJęzyki (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ADO.Properties.Settings.GlobalReference.Default.BTConnectionStringJęzyki" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Słownik_językówTableAdapter" GeneratorDataComponentClassName="Słownik_językówTableAdapter" Name="Słownik_języków" UserDataComponentName="Słownik_językówTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BTConnectionStringJęzyki (Settings)" DbObjectName="BT.dbo.Słownik_języków" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT język FROM dbo.Słownik_języków</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="język" DataSetColumn="język" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ZamowienieJezykDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ZamowienieJezykDataSet" msprop:Generator_UserDSName="ZamowienieJezykDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Słownik_języków" msprop:Generator_TableClassName="Słownik_językówDataTable" msprop:Generator_TableVarName="tableSłownik_języków" msprop:Generator_TablePropName="Słownik_języków" msprop:Generator_RowDeletingName="Słownik_językówRowDeleting" msprop:Generator_RowChangingName="Słownik_językówRowChanging" msprop:Generator_RowEvHandlerName="Słownik_językówRowChangeEventHandler" msprop:Generator_RowDeletedName="Słownik_językówRowDeleted" msprop:Generator_UserTableName="Słownik_języków" msprop:Generator_RowChangedName="Słownik_językówRowChanged" msprop:Generator_RowEvArgName="Słownik_językówRowChangeEvent" msprop:Generator_RowClassName="Słownik_językówRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="język" msprop:Generator_ColumnVarNameInTable="columnjęzyk" msprop:Generator_ColumnPropNameInRow="język" msprop:Generator_ColumnPropNameInTable="językColumn" msprop:Generator_UserColumnName="język">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

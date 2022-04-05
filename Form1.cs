@@ -18,14 +18,14 @@ namespace ADO
         private void button1_Click(object sender, EventArgs e)
         {
             //https://stackoverflow.com/questions/2018272/preventing-multiple-instance-of-one-form-from-displaying
-            Zamówienia formz = Zamówienia.GetInstance();
-            if (!formz.Visible)
+            Zamówienia form = Zamówienia.GetInstance();
+            if (!form.Visible)
             {
-                formz.Show();
+                form.Show();
             }
             else
             {
-                formz.BringToFront();
+                form.BringToFront();
             }
         }
 

@@ -4,15 +4,15 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BTConnectionStringJęzyki" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BTConnectionStringJęzyki (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ADO.Properties.Settings.GlobalReference.Default.BTConnectionStringJęzyki" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MainConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MainConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ADO.Properties.Settings.GlobalReference.Default.MainConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Słownik_językówTableAdapter" GeneratorDataComponentClassName="Słownik_językówTableAdapter" Name="Słownik_języków" UserDataComponentName="Słownik_językówTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BTConnectionStringJęzyki (Settings)" DbObjectName="BT.dbo.Słownik_języków" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MainConnectionString (Settings)" DbObjectName="BT.dbo.Słownik_języków" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT język FROM dbo.Słownik_języków</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM dbo.Słownik_języków</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -20,6 +20,8 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="język" DataSetColumn="język" />
+              <Mapping SourceColumn="ID_język" DataSetColumn="ID_język" />
+              <Mapping SourceColumn="poziom" DataSetColumn="poziom" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -28,13 +30,21 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="ZamowienieJezykDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ZamowienieJezykDataSet" msprop:Generator_UserDSName="ZamowienieJezykDataSet">
+  <xs:element name="ZamowienieJezykDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ZamowienieJezykDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ZamowienieJezykDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Słownik_języków" msprop:Generator_TableClassName="Słownik_językówDataTable" msprop:Generator_TableVarName="tableSłownik_języków" msprop:Generator_TablePropName="Słownik_języków" msprop:Generator_RowDeletingName="Słownik_językówRowDeleting" msprop:Generator_RowChangingName="Słownik_językówRowChanging" msprop:Generator_RowEvHandlerName="Słownik_językówRowChangeEventHandler" msprop:Generator_RowDeletedName="Słownik_językówRowDeleted" msprop:Generator_UserTableName="Słownik_języków" msprop:Generator_RowChangedName="Słownik_językówRowChanged" msprop:Generator_RowEvArgName="Słownik_językówRowChangeEvent" msprop:Generator_RowClassName="Słownik_językówRow">
+        <xs:element name="Słownik_języków" msprop:Generator_RowEvHandlerName="Słownik_językówRowChangeEventHandler" msprop:Generator_RowDeletedName="Słownik_językówRowDeleted" msprop:Generator_RowDeletingName="Słownik_językówRowDeleting" msprop:Generator_RowEvArgName="Słownik_językówRowChangeEvent" msprop:Generator_TablePropName="Słownik_języków" msprop:Generator_RowChangedName="Słownik_językówRowChanged" msprop:Generator_UserTableName="Słownik_języków" msprop:Generator_RowChangingName="Słownik_językówRowChanging" msprop:Generator_RowClassName="Słownik_językówRow" msprop:Generator_TableClassName="Słownik_językówDataTable" msprop:Generator_TableVarName="tableSłownik_języków">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="język" msprop:Generator_ColumnVarNameInTable="columnjęzyk" msprop:Generator_ColumnPropNameInRow="język" msprop:Generator_ColumnPropNameInTable="językColumn" msprop:Generator_UserColumnName="język">
+              <xs:element name="język" msprop:Generator_UserColumnName="język" msprop:Generator_ColumnPropNameInTable="językColumn" msprop:Generator_ColumnPropNameInRow="język" msprop:Generator_ColumnVarNameInTable="columnjęzyk">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_język" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ID_język" msprop:Generator_ColumnPropNameInTable="ID_językColumn" msprop:Generator_ColumnPropNameInRow="ID_język" msprop:Generator_ColumnVarNameInTable="columnID_język" type="xs:int" />
+              <xs:element name="poziom" msprop:Generator_UserColumnName="poziom" msprop:Generator_ColumnPropNameInTable="poziomColumn" msprop:Generator_ColumnPropNameInRow="poziom" msprop:Generator_ColumnVarNameInTable="columnpoziom">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -46,5 +56,9 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Słownik_języków" />
+      <xs:field xpath="mstns:ID_język" />
+    </xs:unique>
   </xs:element>
 </xs:schema>

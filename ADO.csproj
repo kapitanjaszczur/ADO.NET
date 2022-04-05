@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -89,6 +90,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ZamowienieJezykDataSet.cs">
+      <DependentUpon>ZamowienieJezykDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ZamowienieJezykDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,6 +102,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ZamowienieKlientDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZamowieniePracownikDataSet.cs">
+      <DependentUpon>ZamowieniePracownikDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ZamowieniePracownikDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

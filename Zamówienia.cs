@@ -315,7 +315,9 @@ namespace ADO
             numericUpDown_pages.Value = (int)order[6];
             numericUpDown_graphics.Value = (int)order[7];
             comboBox_translationType.SelectedValue = order[8];
-            numericUpDown_price.Value = (decimal)order[9];
+
+            Decimal.TryParse(order[9].ToString(), out decimal price);
+            numericUpDown_price.Value = price;
         }
 
         private void ValueChangedHandler(object sender, EventArgs e)

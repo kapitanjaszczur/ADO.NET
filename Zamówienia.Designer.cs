@@ -50,6 +50,10 @@ namespace ADO
             this.button_calculatePrice = new System.Windows.Forms.Button();
             this.numericUpDown_price = new System.Windows.Forms.NumericUpDown();
             this.comboBox_translationType = new System.Windows.Forms.ComboBox();
+            this.button_deleteOrder = new System.Windows.Forms.Button();
+            this.button_edition = new System.Windows.Forms.Button();
+            this.label_priceValidation = new System.Windows.Forms.Label();
+            this.label_dateValidation = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_orders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_pages)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_graphics)).BeginInit();
@@ -70,34 +74,34 @@ namespace ADO
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 185);
+            this.label1.Location = new System.Drawing.Point(36, 191);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
+            this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "ID_pracownik";
+            this.label1.Text = "Pracownik";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 211);
+            this.label2.Location = new System.Drawing.Point(36, 217);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "ID_klient";
+            this.label2.Text = "Klient";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 236);
+            this.label3.Location = new System.Drawing.Point(36, 242);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "ID_język";
+            this.label3.Text = "Język";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 331);
+            this.label4.Location = new System.Drawing.Point(257, 190);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 13);
             this.label4.TabIndex = 3;
@@ -106,7 +110,7 @@ namespace ADO
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 360);
+            this.label5.Location = new System.Drawing.Point(257, 219);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 13);
             this.label5.TabIndex = 6;
@@ -115,7 +119,7 @@ namespace ADO
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 264);
+            this.label6.Location = new System.Drawing.Point(36, 270);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 13);
             this.label6.TabIndex = 5;
@@ -124,7 +128,7 @@ namespace ADO
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(36, 293);
+            this.label7.Location = new System.Drawing.Point(36, 299);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 13);
             this.label7.TabIndex = 12;
@@ -133,7 +137,7 @@ namespace ADO
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(618, 219);
+            this.label8.Location = new System.Drawing.Point(613, 178);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(32, 13);
             this.label8.TabIndex = 11;
@@ -141,22 +145,23 @@ namespace ADO
             // 
             // dateTimePicker_startDate
             // 
-            this.dateTimePicker_startDate.Location = new System.Drawing.Point(155, 325);
+            this.dateTimePicker_startDate.Location = new System.Drawing.Point(353, 184);
             this.dateTimePicker_startDate.Name = "dateTimePicker_startDate";
             this.dateTimePicker_startDate.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker_startDate.TabIndex = 18;
             // 
             // dateTimePicker_endDate
             // 
-            this.dateTimePicker_endDate.Location = new System.Drawing.Point(155, 354);
+            this.dateTimePicker_endDate.Location = new System.Drawing.Point(353, 213);
             this.dateTimePicker_endDate.Name = "dateTimePicker_endDate";
             this.dateTimePicker_endDate.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker_endDate.TabIndex = 19;
             // 
             // comboBox_employee
             // 
+            this.comboBox_employee.DisplayMember = "ID_pracownik";
             this.comboBox_employee.FormattingEnabled = true;
-            this.comboBox_employee.Location = new System.Drawing.Point(155, 179);
+            this.comboBox_employee.Location = new System.Drawing.Point(122, 185);
             this.comboBox_employee.Name = "comboBox_employee";
             this.comboBox_employee.Size = new System.Drawing.Size(121, 21);
             this.comboBox_employee.TabIndex = 20;
@@ -165,7 +170,7 @@ namespace ADO
             // comboBox_client
             // 
             this.comboBox_client.FormattingEnabled = true;
-            this.comboBox_client.Location = new System.Drawing.Point(155, 206);
+            this.comboBox_client.Location = new System.Drawing.Point(122, 212);
             this.comboBox_client.Name = "comboBox_client";
             this.comboBox_client.Size = new System.Drawing.Size(121, 21);
             this.comboBox_client.TabIndex = 21;
@@ -173,7 +178,7 @@ namespace ADO
             // comboBox_language
             // 
             this.comboBox_language.FormattingEnabled = true;
-            this.comboBox_language.Location = new System.Drawing.Point(155, 233);
+            this.comboBox_language.Location = new System.Drawing.Point(122, 239);
             this.comboBox_language.Name = "comboBox_language";
             this.comboBox_language.Size = new System.Drawing.Size(121, 21);
             this.comboBox_language.TabIndex = 22;
@@ -181,7 +186,7 @@ namespace ADO
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(302, 185);
+            this.label10.Location = new System.Drawing.Point(257, 249);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 13);
             this.label10.TabIndex = 23;
@@ -189,9 +194,9 @@ namespace ADO
             // 
             // button_insertOrder
             // 
-            this.button_insertOrder.Location = new System.Drawing.Point(550, 283);
+            this.button_insertOrder.Location = new System.Drawing.Point(621, 252);
             this.button_insertOrder.Name = "button_insertOrder";
-            this.button_insertOrder.Size = new System.Drawing.Size(316, 23);
+            this.button_insertOrder.Size = new System.Drawing.Size(245, 23);
             this.button_insertOrder.TabIndex = 24;
             this.button_insertOrder.Text = "Wprowadź zamówienie";
             this.button_insertOrder.UseVisualStyleBackColor = true;
@@ -199,24 +204,19 @@ namespace ADO
             // 
             // numericUpDown_pages
             // 
-            this.numericUpDown_pages.Location = new System.Drawing.Point(155, 262);
-            this.numericUpDown_pages.Minimum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
+            this.numericUpDown_pages.Location = new System.Drawing.Point(122, 268);
             this.numericUpDown_pages.Name = "numericUpDown_pages";
             this.numericUpDown_pages.Size = new System.Drawing.Size(121, 20);
             this.numericUpDown_pages.TabIndex = 26;
             this.numericUpDown_pages.Value = new decimal(new int[] {
-            3,
+            1,
             0,
             0,
             0});
             // 
             // numericUpDown_graphics
             // 
-            this.numericUpDown_graphics.Location = new System.Drawing.Point(155, 291);
+            this.numericUpDown_graphics.Location = new System.Drawing.Point(122, 297);
             this.numericUpDown_graphics.Maximum = new decimal(new int[] {
             15,
             0,
@@ -228,9 +228,9 @@ namespace ADO
             // 
             // button_calculatePrice
             // 
-            this.button_calculatePrice.Location = new System.Drawing.Point(550, 180);
+            this.button_calculatePrice.Location = new System.Drawing.Point(621, 225);
             this.button_calculatePrice.Name = "button_calculatePrice";
-            this.button_calculatePrice.Size = new System.Drawing.Size(316, 23);
+            this.button_calculatePrice.Size = new System.Drawing.Size(245, 23);
             this.button_calculatePrice.TabIndex = 28;
             this.button_calculatePrice.Text = "Oblicz cenę";
             this.button_calculatePrice.UseVisualStyleBackColor = true;
@@ -238,8 +238,9 @@ namespace ADO
             // 
             // numericUpDown_price
             // 
+            this.numericUpDown_price.DecimalPlaces = 2;
             this.numericUpDown_price.Enabled = false;
-            this.numericUpDown_price.Location = new System.Drawing.Point(695, 217);
+            this.numericUpDown_price.Location = new System.Drawing.Point(651, 176);
             this.numericUpDown_price.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -247,22 +248,67 @@ namespace ADO
             0});
             this.numericUpDown_price.Name = "numericUpDown_price";
             this.numericUpDown_price.ReadOnly = true;
-            this.numericUpDown_price.Size = new System.Drawing.Size(121, 20);
+            this.numericUpDown_price.Size = new System.Drawing.Size(215, 20);
             this.numericUpDown_price.TabIndex = 29;
             // 
             // comboBox_translationType
             // 
             this.comboBox_translationType.FormattingEnabled = true;
-            this.comboBox_translationType.Location = new System.Drawing.Point(305, 201);
+            this.comboBox_translationType.Location = new System.Drawing.Point(353, 246);
             this.comboBox_translationType.Name = "comboBox_translationType";
-            this.comboBox_translationType.Size = new System.Drawing.Size(175, 21);
+            this.comboBox_translationType.Size = new System.Drawing.Size(200, 21);
             this.comboBox_translationType.TabIndex = 30;
+            // 
+            // button_deleteOrder
+            // 
+            this.button_deleteOrder.Location = new System.Drawing.Point(621, 310);
+            this.button_deleteOrder.Name = "button_deleteOrder";
+            this.button_deleteOrder.Size = new System.Drawing.Size(245, 23);
+            this.button_deleteOrder.TabIndex = 31;
+            this.button_deleteOrder.Text = "Usuń zamówienie";
+            this.button_deleteOrder.UseVisualStyleBackColor = true;
+            this.button_deleteOrder.Click += new System.EventHandler(this.button_deleteOrder_Click);
+            // 
+            // button_edition
+            // 
+            this.button_edition.Enabled = false;
+            this.button_edition.Location = new System.Drawing.Point(621, 281);
+            this.button_edition.Name = "button_edition";
+            this.button_edition.Size = new System.Drawing.Size(245, 23);
+            this.button_edition.TabIndex = 32;
+            this.button_edition.Text = "Edytuj zamówienie";
+            this.button_edition.UseVisualStyleBackColor = true;
+            this.button_edition.Click += new System.EventHandler(this.button_edition_Click);
+            // 
+            // label_priceValidation
+            // 
+            this.label_priceValidation.AutoSize = true;
+            this.label_priceValidation.Location = new System.Drawing.Point(618, 206);
+            this.label_priceValidation.Name = "label_priceValidation";
+            this.label_priceValidation.Size = new System.Drawing.Size(138, 13);
+            this.label_priceValidation.TabIndex = 33;
+            this.label_priceValidation.Text = "Cena nie została obliczona!";
+            this.label_priceValidation.Visible = false;
+            // 
+            // label_dateValidation
+            // 
+            this.label_dateValidation.AutoSize = true;
+            this.label_dateValidation.Location = new System.Drawing.Point(257, 165);
+            this.label_dateValidation.Name = "label_dateValidation";
+            this.label_dateValidation.Size = new System.Drawing.Size(321, 13);
+            this.label_dateValidation.TabIndex = 34;
+            this.label_dateValidation.Text = "Data rozpoczęcia zlecenia musi być większa od daty zakończenia!";
+            this.label_dateValidation.Visible = false;
             // 
             // Zamówienia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 450);
+            this.ClientSize = new System.Drawing.Size(878, 357);
+            this.Controls.Add(this.label_dateValidation);
+            this.Controls.Add(this.label_priceValidation);
+            this.Controls.Add(this.button_edition);
+            this.Controls.Add(this.button_deleteOrder);
             this.Controls.Add(this.comboBox_translationType);
             this.Controls.Add(this.numericUpDown_price);
             this.Controls.Add(this.button_calculatePrice);
@@ -319,5 +365,9 @@ namespace ADO
         private System.Windows.Forms.Button button_calculatePrice;
         private System.Windows.Forms.NumericUpDown numericUpDown_price;
         private System.Windows.Forms.ComboBox comboBox_translationType;
+        private System.Windows.Forms.Button button_deleteOrder;
+        private System.Windows.Forms.Button button_edition;
+        private System.Windows.Forms.Label label_priceValidation;
+        private System.Windows.Forms.Label label_dateValidation;
     }
 }

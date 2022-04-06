@@ -288,7 +288,6 @@ namespace ADO
             this.label_priceValidation.Size = new System.Drawing.Size(138, 13);
             this.label_priceValidation.TabIndex = 33;
             this.label_priceValidation.Text = "Cena nie została obliczona!";
-            this.label_priceValidation.Visible = false;
             // 
             // label_dateValidation
             // 

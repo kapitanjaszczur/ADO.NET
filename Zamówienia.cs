@@ -250,6 +250,7 @@ namespace ADO
                 dateTimePicker.ValueChanged += new EventHandler(ValueChangedHandler);
             }
 
+            comboBox_translationType.SelectedValueChanged += new EventHandler(PriceDeterminantControlChangedHandler);
             comboBox_employee.SelectedValueChanged += new EventHandler(SelectedEmployeeChangedHandler);
             dataGridView_orders.SelectionChanged += new EventHandler(SelectedGridViewRowChangedHandler);
         }

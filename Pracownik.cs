@@ -17,7 +17,6 @@ namespace ADO
             InitializeComponent();
         }
 
-        //https://stackoverflow.com/questions/2018272/preventing-multiple-instance-of-one-form-from-displaying
         private static Pracownik _instance;
         public static Pracownik GetInstance()
         {
@@ -27,13 +26,7 @@ namespace ADO
 
         private void Języki_Load(object sender, EventArgs e)
         {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'językiDataSet.Słownik_języków' . Możesz go przenieść lub usunąć.
-            this.słownik_językówTableAdapter.Fill(this.językiDataSet.Słownik_języków);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'językiPracownikaDataSet.Język_pracownika' . Możesz go przenieść lub usunąć.
-            this.język_pracownikaTableAdapter.Fill(this.językiPracownikaDataSet.Język_pracownika);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'pracownikDataSet.Pracownik' . Możesz go przenieść lub usunąć.
-            this.pracownikTableAdapter.Fill(this.pracownikDataSet.Pracownik);
-
+            
         }
 
     }

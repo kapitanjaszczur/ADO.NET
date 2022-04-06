@@ -29,22 +29,7 @@ namespace ADO
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDzamówienieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDpracownikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDklientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDjęzykDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datapoczątkowaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datakońcowaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.liczbastronDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.liczbagrafikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specjalistyczneDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ekspresoweDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zamówienieBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.zamówienieDataSet = new ADO.ZamówienieDataSet();
-            this.zamówienieTableAdapter = new ADO.ZamówienieDataSetTableAdapters.ZamówienieTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -67,154 +52,22 @@ namespace ADO
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.button2 = new System.Windows.Forms.Button();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.zamowieniePracownikDataSet = new ADO.ZamowieniePracownikDataSet();
-            this.pracownikBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pracownikTableAdapter = new ADO.ZamowieniePracownikDataSetTableAdapters.PracownikTableAdapter();
-            this.zamowienieKlientDataSet = new ADO.ZamowienieKlientDataSet();
-            this.klientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.klientTableAdapter = new ADO.ZamowienieKlientDataSetTableAdapters.KlientTableAdapter();
-            this.zamowienieJezykDataSet = new ADO.ZamowienieJezykDataSet();
-            this.słownikjęzykówBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.słownik_językówTableAdapter = new ADO.ZamowienieJezykDataSetTableAdapters.Słownik_językówTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zamówienieBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zamówienieDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zamowieniePracownikDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pracownikBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zamowienieKlientDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.klientBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zamowienieJezykDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.słownikjęzykówBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDzamówienieDataGridViewTextBoxColumn,
-            this.iDpracownikDataGridViewTextBoxColumn,
-            this.iDklientDataGridViewTextBoxColumn,
-            this.iDjęzykDataGridViewTextBoxColumn,
-            this.datapoczątkowaDataGridViewTextBoxColumn,
-            this.datakońcowaDataGridViewTextBoxColumn,
-            this.liczbastronDataGridViewTextBoxColumn,
-            this.liczbagrafikDataGridViewTextBoxColumn,
-            this.specjalistyczneDataGridViewCheckBoxColumn,
-            this.ekspresoweDataGridViewCheckBoxColumn,
-            this.cenaDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.zamówienieBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(854, 150);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // iDzamówienieDataGridViewTextBoxColumn
-            // 
-            this.iDzamówienieDataGridViewTextBoxColumn.DataPropertyName = "ID_zamówienie";
-            this.iDzamówienieDataGridViewTextBoxColumn.HeaderText = "ID_zamówienie";
-            this.iDzamówienieDataGridViewTextBoxColumn.Name = "iDzamówienieDataGridViewTextBoxColumn";
-            this.iDzamówienieDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDzamówienieDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // iDpracownikDataGridViewTextBoxColumn
-            // 
-            this.iDpracownikDataGridViewTextBoxColumn.DataPropertyName = "ID_pracownik";
-            this.iDpracownikDataGridViewTextBoxColumn.HeaderText = "ID_pracownik";
-            this.iDpracownikDataGridViewTextBoxColumn.Name = "iDpracownikDataGridViewTextBoxColumn";
-            this.iDpracownikDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDpracownikDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // iDklientDataGridViewTextBoxColumn
-            // 
-            this.iDklientDataGridViewTextBoxColumn.DataPropertyName = "ID_klient";
-            this.iDklientDataGridViewTextBoxColumn.HeaderText = "ID_klient";
-            this.iDklientDataGridViewTextBoxColumn.Name = "iDklientDataGridViewTextBoxColumn";
-            this.iDklientDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDklientDataGridViewTextBoxColumn.Width = 55;
-            // 
-            // iDjęzykDataGridViewTextBoxColumn
-            // 
-            this.iDjęzykDataGridViewTextBoxColumn.DataPropertyName = "ID_język";
-            this.iDjęzykDataGridViewTextBoxColumn.HeaderText = "ID_język";
-            this.iDjęzykDataGridViewTextBoxColumn.Name = "iDjęzykDataGridViewTextBoxColumn";
-            this.iDjęzykDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDjęzykDataGridViewTextBoxColumn.Width = 55;
-            // 
-            // datapoczątkowaDataGridViewTextBoxColumn
-            // 
-            this.datapoczątkowaDataGridViewTextBoxColumn.DataPropertyName = "data_początkowa";
-            this.datapoczątkowaDataGridViewTextBoxColumn.HeaderText = "data_początkowa";
-            this.datapoczątkowaDataGridViewTextBoxColumn.Name = "datapoczątkowaDataGridViewTextBoxColumn";
-            this.datapoczątkowaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // datakońcowaDataGridViewTextBoxColumn
-            // 
-            this.datakońcowaDataGridViewTextBoxColumn.DataPropertyName = "data_końcowa";
-            this.datakońcowaDataGridViewTextBoxColumn.HeaderText = "data_końcowa";
-            this.datakońcowaDataGridViewTextBoxColumn.Name = "datakońcowaDataGridViewTextBoxColumn";
-            this.datakońcowaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.datakońcowaDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // liczbastronDataGridViewTextBoxColumn
-            // 
-            this.liczbastronDataGridViewTextBoxColumn.DataPropertyName = "liczba_stron";
-            this.liczbastronDataGridViewTextBoxColumn.HeaderText = "liczba_stron";
-            this.liczbastronDataGridViewTextBoxColumn.Name = "liczbastronDataGridViewTextBoxColumn";
-            this.liczbastronDataGridViewTextBoxColumn.ReadOnly = true;
-            this.liczbastronDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // liczbagrafikDataGridViewTextBoxColumn
-            // 
-            this.liczbagrafikDataGridViewTextBoxColumn.DataPropertyName = "liczba_grafik";
-            this.liczbagrafikDataGridViewTextBoxColumn.HeaderText = "liczba_grafik";
-            this.liczbagrafikDataGridViewTextBoxColumn.Name = "liczbagrafikDataGridViewTextBoxColumn";
-            this.liczbagrafikDataGridViewTextBoxColumn.ReadOnly = true;
-            this.liczbagrafikDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // specjalistyczneDataGridViewCheckBoxColumn
-            // 
-            this.specjalistyczneDataGridViewCheckBoxColumn.DataPropertyName = "specjalistyczne";
-            this.specjalistyczneDataGridViewCheckBoxColumn.HeaderText = "specjalistyczne";
-            this.specjalistyczneDataGridViewCheckBoxColumn.Name = "specjalistyczneDataGridViewCheckBoxColumn";
-            this.specjalistyczneDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.specjalistyczneDataGridViewCheckBoxColumn.Width = 85;
-            // 
-            // ekspresoweDataGridViewCheckBoxColumn
-            // 
-            this.ekspresoweDataGridViewCheckBoxColumn.DataPropertyName = "ekspresowe";
-            this.ekspresoweDataGridViewCheckBoxColumn.HeaderText = "ekspresowe";
-            this.ekspresoweDataGridViewCheckBoxColumn.Name = "ekspresoweDataGridViewCheckBoxColumn";
-            this.ekspresoweDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.ekspresoweDataGridViewCheckBoxColumn.Width = 75;
-            // 
-            // cenaDataGridViewTextBoxColumn
-            // 
-            this.cenaDataGridViewTextBoxColumn.DataPropertyName = "cena";
-            this.cenaDataGridViewTextBoxColumn.HeaderText = "cena";
-            this.cenaDataGridViewTextBoxColumn.Name = "cenaDataGridViewTextBoxColumn";
-            this.cenaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cenaDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // zamówienieBindingSource
-            // 
-            this.zamówienieBindingSource.DataMember = "Zamówienie";
-            this.zamówienieBindingSource.DataSource = this.zamówienieDataSet;
-            // 
-            // zamówienieDataSet
-            // 
-            this.zamówienieDataSet.DataSetName = "ZamówienieDataSet";
-            this.zamówienieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // zamówienieTableAdapter
-            // 
-            this.zamówienieTableAdapter.ClearBeforeFill = true;
             // 
             // label1
             // 
@@ -336,8 +189,6 @@ namespace ADO
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.pracownikBindingSource;
-            this.comboBox1.DisplayMember = "ID_pracownik";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(155, 179);
             this.comboBox1.Name = "comboBox1";
@@ -347,8 +198,6 @@ namespace ADO
             // 
             // comboBox2
             // 
-            this.comboBox2.DataSource = this.klientBindingSource;
-            this.comboBox2.DisplayMember = "ID_klient";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(155, 206);
             this.comboBox2.Name = "comboBox2";
@@ -358,8 +207,6 @@ namespace ADO
             // 
             // comboBox3
             // 
-            this.comboBox3.DataSource = this.słownikjęzykówBindingSource;
-            this.comboBox3.DisplayMember = "język";
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(155, 233);
             this.comboBox3.Name = "comboBox3";
@@ -439,48 +286,6 @@ namespace ADO
             this.numericUpDown3.Size = new System.Drawing.Size(121, 20);
             this.numericUpDown3.TabIndex = 29;
             // 
-            // zamowieniePracownikDataSet
-            // 
-            this.zamowieniePracownikDataSet.DataSetName = "ZamowieniePracownikDataSet";
-            this.zamowieniePracownikDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pracownikBindingSource
-            // 
-            this.pracownikBindingSource.DataMember = "Pracownik";
-            this.pracownikBindingSource.DataSource = this.zamowieniePracownikDataSet;
-            // 
-            // pracownikTableAdapter
-            // 
-            this.pracownikTableAdapter.ClearBeforeFill = true;
-            // 
-            // zamowienieKlientDataSet
-            // 
-            this.zamowienieKlientDataSet.DataSetName = "ZamowienieKlientDataSet";
-            this.zamowienieKlientDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // klientBindingSource
-            // 
-            this.klientBindingSource.DataMember = "Klient";
-            this.klientBindingSource.DataSource = this.zamowienieKlientDataSet;
-            // 
-            // klientTableAdapter
-            // 
-            this.klientTableAdapter.ClearBeforeFill = true;
-            // 
-            // zamowienieJezykDataSet
-            // 
-            this.zamowienieJezykDataSet.DataSetName = "ZamowienieJezykDataSet";
-            this.zamowienieJezykDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // słownikjęzykówBindingSource
-            // 
-            this.słownikjęzykówBindingSource.DataMember = "Słownik_języków";
-            this.słownikjęzykówBindingSource.DataSource = this.zamowienieJezykDataSet;
-            // 
-            // słownik_językówTableAdapter
-            // 
-            this.słownik_językówTableAdapter.ClearBeforeFill = true;
-            // 
             // Zamówienia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -513,17 +318,9 @@ namespace ADO
             this.Text = "Zamówienia";
             this.Load += new System.EventHandler(this.Zamówienia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zamówienieBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zamówienieDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zamowieniePracownikDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pracownikBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zamowienieKlientDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.klientBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zamowienieJezykDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.słownikjęzykówBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -532,20 +329,6 @@ namespace ADO
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private ZamówienieDataSet zamówienieDataSet;
-        private System.Windows.Forms.BindingSource zamówienieBindingSource;
-        private ZamówienieDataSetTableAdapters.ZamówienieTableAdapter zamówienieTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDzamówienieDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDpracownikDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDklientDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDjęzykDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datapoczątkowaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datakońcowaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn liczbastronDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn liczbagrafikDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn specjalistyczneDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn ekspresoweDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cenaDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -568,14 +351,5 @@ namespace ADO
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private ZamowieniePracownikDataSet zamowieniePracownikDataSet;
-        private System.Windows.Forms.BindingSource pracownikBindingSource;
-        private ZamowieniePracownikDataSetTableAdapters.PracownikTableAdapter pracownikTableAdapter;
-        private ZamowienieKlientDataSet zamowienieKlientDataSet;
-        private System.Windows.Forms.BindingSource klientBindingSource;
-        private ZamowienieKlientDataSetTableAdapters.KlientTableAdapter klientTableAdapter;
-        private ZamowienieJezykDataSet zamowienieJezykDataSet;
-        private System.Windows.Forms.BindingSource słownikjęzykówBindingSource;
-        private ZamowienieJezykDataSetTableAdapters.Słownik_językówTableAdapter słownik_językówTableAdapter;
     }
 }

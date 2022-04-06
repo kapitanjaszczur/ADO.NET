@@ -27,14 +27,6 @@ namespace ADO
 
         private void Zamówienia_Load(object sender, EventArgs e)
         {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'zamowienieJezykDataSet.Słownik_języków' . Możesz go przenieść lub usunąć.
-            this.słownik_językówTableAdapter.Fill(this.zamowienieJezykDataSet.Słownik_języków);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'zamowienieKlientDataSet.Klient' . Możesz go przenieść lub usunąć.
-            this.klientTableAdapter.Fill(this.zamowienieKlientDataSet.Klient);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'zamowieniePracownikDataSet.Pracownik' . Możesz go przenieść lub usunąć.
-            this.pracownikTableAdapter.Fill(this.zamowieniePracownikDataSet.Pracownik);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'zamówienieDataSet.Zamówienie' . Możesz go przenieść lub usunąć.
-            this.zamówienieTableAdapter.Fill(this.zamówienieDataSet.Zamówienie);
 
             dateTimePicker1.MinDate = DateTime.Today;
             dateTimePicker1.MaxDate = new DateTime(2030,12,30);

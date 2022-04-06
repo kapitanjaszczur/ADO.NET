@@ -29,28 +29,9 @@ namespace ADO
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDpracownikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imięDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pracownikBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pracownikDataSet = new ADO.PracownikDataSet();
-            this.pracownikTableAdapter = new ADO.PracownikDataSetTableAdapters.PracownikTableAdapter();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.iDjęzykpracownikaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDpracownikDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDjęzykDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tłumaczprzysięgłyDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.językpracownikaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.językiPracownikaDataSet = new ADO.JęzykiPracownikaDataSet();
-            this.język_pracownikaTableAdapter = new ADO.JęzykiPracownikaDataSetTableAdapters.Język_pracownikaTableAdapter();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.słownikjęzykówBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.językiDataSet = new ADO.JęzykiDataSet();
-            this.słownik_językówTableAdapter = new ADO.JęzykiDataSetTableAdapters.Słownik_językówTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -95,17 +76,9 @@ namespace ADO
             this.button7 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.iDjęzykDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.językDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pracownikBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pracownikDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.językpracownikaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.językiPracownikaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.słownikjęzykówBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.językiDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -116,166 +89,34 @@ namespace ADO
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDpracownikDataGridViewTextBoxColumn,
-            this.imięDataGridViewTextBoxColumn,
-            this.nazwiskoDataGridViewTextBoxColumn,
-            this.telefonDataGridViewTextBoxColumn,
-            this.adresmailDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.pracownikBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(608, 150);
             this.dataGridView1.TabIndex = 0;
             // 
-            // iDpracownikDataGridViewTextBoxColumn
-            // 
-            this.iDpracownikDataGridViewTextBoxColumn.DataPropertyName = "ID_pracownik";
-            this.iDpracownikDataGridViewTextBoxColumn.HeaderText = "ID_pracownik";
-            this.iDpracownikDataGridViewTextBoxColumn.Name = "iDpracownikDataGridViewTextBoxColumn";
-            this.iDpracownikDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDpracownikDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // imięDataGridViewTextBoxColumn
-            // 
-            this.imięDataGridViewTextBoxColumn.DataPropertyName = "imię";
-            this.imięDataGridViewTextBoxColumn.HeaderText = "imię";
-            this.imięDataGridViewTextBoxColumn.Name = "imięDataGridViewTextBoxColumn";
-            this.imięDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nazwiskoDataGridViewTextBoxColumn
-            // 
-            this.nazwiskoDataGridViewTextBoxColumn.DataPropertyName = "nazwisko";
-            this.nazwiskoDataGridViewTextBoxColumn.HeaderText = "nazwisko";
-            this.nazwiskoDataGridViewTextBoxColumn.Name = "nazwiskoDataGridViewTextBoxColumn";
-            this.nazwiskoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telefonDataGridViewTextBoxColumn
-            // 
-            this.telefonDataGridViewTextBoxColumn.DataPropertyName = "telefon";
-            this.telefonDataGridViewTextBoxColumn.HeaderText = "telefon";
-            this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
-            this.telefonDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telefonDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // adresmailDataGridViewTextBoxColumn
-            // 
-            this.adresmailDataGridViewTextBoxColumn.DataPropertyName = "adres_mail";
-            this.adresmailDataGridViewTextBoxColumn.HeaderText = "adres_mail";
-            this.adresmailDataGridViewTextBoxColumn.Name = "adresmailDataGridViewTextBoxColumn";
-            this.adresmailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.adresmailDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // pracownikBindingSource
-            // 
-            this.pracownikBindingSource.DataMember = "Pracownik";
-            this.pracownikBindingSource.DataSource = this.pracownikDataSet;
-            // 
-            // pracownikDataSet
-            // 
-            this.pracownikDataSet.DataSetName = "PracownikDataSet";
-            this.pracownikDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pracownikTableAdapter
-            // 
-            this.pracownikTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDjęzykpracownikaDataGridViewTextBoxColumn,
-            this.iDpracownikDataGridViewTextBoxColumn1,
-            this.iDjęzykDataGridViewTextBoxColumn,
-            this.tłumaczprzysięgłyDataGridViewCheckBoxColumn});
-            this.dataGridView2.DataSource = this.językpracownikaBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(626, 12);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(411, 150);
             this.dataGridView2.TabIndex = 1;
             // 
-            // iDjęzykpracownikaDataGridViewTextBoxColumn
-            // 
-            this.iDjęzykpracownikaDataGridViewTextBoxColumn.DataPropertyName = "ID_język_pracownika";
-            this.iDjęzykpracownikaDataGridViewTextBoxColumn.HeaderText = "ID_język_pracownika";
-            this.iDjęzykpracownikaDataGridViewTextBoxColumn.Name = "iDjęzykpracownikaDataGridViewTextBoxColumn";
-            this.iDjęzykpracownikaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDjęzykpracownikaDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // iDpracownikDataGridViewTextBoxColumn1
-            // 
-            this.iDpracownikDataGridViewTextBoxColumn1.DataPropertyName = "ID_pracownik";
-            this.iDpracownikDataGridViewTextBoxColumn1.HeaderText = "ID_pracownik";
-            this.iDpracownikDataGridViewTextBoxColumn1.Name = "iDpracownikDataGridViewTextBoxColumn1";
-            this.iDpracownikDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.iDpracownikDataGridViewTextBoxColumn1.Width = 80;
-            // 
-            // iDjęzykDataGridViewTextBoxColumn
-            // 
-            this.iDjęzykDataGridViewTextBoxColumn.DataPropertyName = "ID_język";
-            this.iDjęzykDataGridViewTextBoxColumn.HeaderText = "ID_język";
-            this.iDjęzykDataGridViewTextBoxColumn.Name = "iDjęzykDataGridViewTextBoxColumn";
-            this.iDjęzykDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDjęzykDataGridViewTextBoxColumn.Width = 55;
-            // 
-            // tłumaczprzysięgłyDataGridViewCheckBoxColumn
-            // 
-            this.tłumaczprzysięgłyDataGridViewCheckBoxColumn.DataPropertyName = "tłumacz_przysięgły";
-            this.tłumaczprzysięgłyDataGridViewCheckBoxColumn.HeaderText = "tłumacz_przysięgły";
-            this.tłumaczprzysięgłyDataGridViewCheckBoxColumn.Name = "tłumaczprzysięgłyDataGridViewCheckBoxColumn";
-            this.tłumaczprzysięgłyDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.tłumaczprzysięgłyDataGridViewCheckBoxColumn.Width = 105;
-            // 
-            // językpracownikaBindingSource
-            // 
-            this.językpracownikaBindingSource.DataMember = "Język_pracownika";
-            this.językpracownikaBindingSource.DataSource = this.językiPracownikaDataSet;
-            // 
-            // językiPracownikaDataSet
-            // 
-            this.językiPracownikaDataSet.DataSetName = "JęzykiPracownikaDataSet";
-            this.językiPracownikaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // język_pracownikaTableAdapter
-            // 
-            this.język_pracownikaTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridView3
             // 
             this.dataGridView3.AllowUserToAddRows = false;
             this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AutoGenerateColumns = false;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDjęzykDataGridViewTextBoxColumn1,
-            this.językDataGridViewTextBoxColumn});
-            this.dataGridView3.DataSource = this.słownikjęzykówBindingSource;
             this.dataGridView3.Location = new System.Drawing.Point(1043, 12);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.Size = new System.Drawing.Size(210, 150);
             this.dataGridView3.TabIndex = 2;
-            // 
-            // słownikjęzykówBindingSource
-            // 
-            this.słownikjęzykówBindingSource.DataMember = "Słownik_języków";
-            this.słownikjęzykówBindingSource.DataSource = this.językiDataSet;
-            // 
-            // językiDataSet
-            // 
-            this.językiDataSet.DataSetName = "JęzykiDataSet";
-            this.językiDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // słownik_językówTableAdapter
-            // 
-            this.słownik_językówTableAdapter.ClearBeforeFill = true;
             // 
             // label1
             // 
@@ -694,22 +535,6 @@ namespace ADO
             this.comboBox3.Size = new System.Drawing.Size(203, 21);
             this.comboBox3.TabIndex = 2;
             // 
-            // iDjęzykDataGridViewTextBoxColumn1
-            // 
-            this.iDjęzykDataGridViewTextBoxColumn1.DataPropertyName = "ID_język";
-            this.iDjęzykDataGridViewTextBoxColumn1.HeaderText = "ID_język";
-            this.iDjęzykDataGridViewTextBoxColumn1.Name = "iDjęzykDataGridViewTextBoxColumn1";
-            this.iDjęzykDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.iDjęzykDataGridViewTextBoxColumn1.Width = 60;
-            // 
-            // językDataGridViewTextBoxColumn
-            // 
-            this.językDataGridViewTextBoxColumn.DataPropertyName = "język";
-            this.językDataGridViewTextBoxColumn.HeaderText = "język";
-            this.językDataGridViewTextBoxColumn.Name = "językDataGridViewTextBoxColumn";
-            this.językDataGridViewTextBoxColumn.ReadOnly = true;
-            this.językDataGridViewTextBoxColumn.Width = 90;
-            // 
             // Pracownik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -726,14 +551,8 @@ namespace ADO
             this.Text = "Pracownicy";
             this.Load += new System.EventHandler(this.Języki_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pracownikBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pracownikDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.językpracownikaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.językiPracownikaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.słownikjęzykówBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.językiDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -749,26 +568,8 @@ namespace ADO
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private PracownikDataSet pracownikDataSet;
-        private System.Windows.Forms.BindingSource pracownikBindingSource;
-        private PracownikDataSetTableAdapters.PracownikTableAdapter pracownikTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private JęzykiPracownikaDataSet językiPracownikaDataSet;
-        private System.Windows.Forms.BindingSource językpracownikaBindingSource;
-        private JęzykiPracownikaDataSetTableAdapters.Język_pracownikaTableAdapter język_pracownikaTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private JęzykiDataSet językiDataSet;
-        private System.Windows.Forms.BindingSource słownikjęzykówBindingSource;
-        private JęzykiDataSetTableAdapters.Słownik_językówTableAdapter słownik_językówTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDpracownikDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn imięDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazwiskoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefonDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adresmailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDjęzykpracownikaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDpracownikDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDjęzykDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn tłumaczprzysięgłyDataGridViewCheckBoxColumn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -813,7 +614,5 @@ namespace ADO
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDjęzykDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn językDataGridViewTextBoxColumn;
     }
 }

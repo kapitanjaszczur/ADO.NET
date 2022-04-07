@@ -19,7 +19,7 @@ namespace ADO
         }
 
         private static Pracownik _instance;
-        readonly string connectionString = "Server=DESKTOP-JH1VST5\\SQLEXPRESS;Database=BT;Uid=DESKTOP-JH1VST5\\N;Pwd=;Trusted_Connection=True;";
+        readonly string connectionString = "Server=DESKTOP-JH1VST5\\SQLEXPRESS;Database=BT;Uid=DESKTOP-JH1VST5\\Komputer;Pwd=;Trusted_Connection=True;";
         public static Pracownik GetInstance()
         {
             if (_instance == null) _instance = new Pracownik();
@@ -90,7 +90,7 @@ namespace ADO
                 try
                 {
                     SqlCommand cmd = new SqlCommand("UPDATE Pracownik " +
-                                                    "SET imię='" + imie + "', nazwisko='" + nazwisko + "', telefon=" + telefon + ", adres_mail='" + mail + "'; " +
+                                                    "SET imię='" + imie + "', nazwisko='" + nazwisko + "', telefon=" + telefon + ", adres_mail='" + mail + "' " +
                                                     "WHERE ID_pracownik="+id, connection);
                     connection.Open();
                     cmd.ExecuteNonQuery();
@@ -125,7 +125,7 @@ namespace ADO
             SqlConnection connection = new SqlConnection(connectionString);
             var dataAdapter1 = new SqlDataAdapter("SELECT * FROM dbo.Pracownik", connection);
             var dataAdapter2 = new SqlDataAdapter("SELECT ID_język_pracownika, ID_pracownik, ID_język FROM dbo.Język_pracownika", connection);
-            var dataAdapter3 = new SqlDataAdapter("SELECT * FROM dbo.Słownik_języków", connection);
+            var dataAdapter3 = new SqlDataAdapter("SELECT ID_język, język FROM dbo.Słownik_języków", connection);
             try
             {
                 var commandBuilder = new SqlCommandBuilder(dataAdapter1);
@@ -197,7 +197,7 @@ namespace ADO
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Słownik_języków VALUES ('"+język+"');", connection);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Słownik_języków VALUES ('"+język+"', 'C2');", connection);
                     connection.Open();
                     cmd.ExecuteNonQuery();
                 }

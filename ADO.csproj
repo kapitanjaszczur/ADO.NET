@@ -53,40 +53,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="JęzykiDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>JęzykiDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="JęzykiPracownikaDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>JęzykiPracownikaDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Klient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Klient.Designer.cs">
       <DependentUpon>Klient.cs</DependentUpon>
     </Compile>
-    <Compile Include="KlientDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>KlientDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Pracownik.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pracownik.Designer.cs">
       <DependentUpon>Pracownik.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PracownikDataSet.cs">
-      <DependentUpon>PracownikDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PracownikDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PracownikDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,50 +94,6 @@
     <EmbeddedResource Include="Zamówienia.resx">
       <DependentUpon>Zamówienia.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="JęzykiDataSet.xsc">
-      <DependentUpon>JęzykiDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="JęzykiDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>JęzykiDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="JęzykiDataSet.xss">
-      <DependentUpon>JęzykiDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="JęzykiPracownikaDataSet.xsc">
-      <DependentUpon>JęzykiPracownikaDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="JęzykiPracownikaDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>JęzykiPracownikaDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="JęzykiPracownikaDataSet.xss">
-      <DependentUpon>JęzykiPracownikaDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="KlientDataSet.xsc">
-      <DependentUpon>KlientDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="KlientDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>KlientDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="KlientDataSet.xss">
-      <DependentUpon>KlientDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="PracownikDataSet.xsc">
-      <DependentUpon>PracownikDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="PracownikDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PracownikDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PracownikDataSet.xss">
-      <DependentUpon>PracownikDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

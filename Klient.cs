@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ADO
@@ -18,26 +12,20 @@ namespace ADO
             InitializeComponent();
         }
 
-        //https://stackoverflow.com/questions/2018272/preventing-multiple-instance-of-one-form-from-displaying
         private static Klient _instance;
+        readonly string connectionString = "Server=DESKTOP-JH1VST5\\SQLEXPRESS;Database=BT;Uid=DESKTOP-JH1VST5\\N;Pwd=;Trusted_Connection=True;";
+
         public static Klient GetInstance()
         {
             if (_instance == null) _instance = new Klient();
             return _instance;
         }
 
+        
         private void Klient_Load(object sender, EventArgs e)
         {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'klientDataSet.Klient' . Możesz go przenieść lub usunąć.
-            this.klientTableAdapter.Fill(this.klientDataSet.Klient);
-
+            
         }
-        //SqlConnection con = new SqlConnection("Server=DESKTOP-HQGJNCF\\SQLEXPRESS;Database=BT;Uid=DESKTOP-HQGJNCF\\N;Pwd=");
-        string connectionString = "Server=DESKTOP-HQGJNCF\\SQLEXPRESS;Database=BT;Uid=DESKTOP-HQGJNCF\\N;Pwd=";
-
-
-
-
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -54,33 +42,119 @@ namespace ADO
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //dodawanie
         {
             string nazwa = textBox1.Text;
-            decimal telefon = numericUpDown1.Value;
+            int telefon = 0;
+            if (maskedTextBox1.Text == null)
+            {
+                MessageBox.Show("Wprowadź poprawne wartości");
+            }
+            else if (int.Parse(maskedTextBox1.Text) <1) {
+                MessageBox.Show("Wprowadź poprawne wartości");
+            }
+            else
+            {
+                telefon = int.Parse(maskedTextBox1.Text);
+            }
             string mail = textBox2.Text;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                connection.Open();
-                // Do work here.  
+                if (nazwa.Length >10 && telefon >0 && mail.Length >10) {
+                    try
+                    {
+                        SqlCommand cmd = new SqlCommand("INSERT INTO Klient VALUES ('" + nazwa + "', " + telefon + ", '" + mail + "');", connection);
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Wprowadź poprawne wartości");
+                }
+                
             }
 
-            // SqlCommand cmd = new SqlCommand("INSERT INTO Klient VALUES ('" + nazwa + "'," + telefon + ",'" + mail + "')", con);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) //edytowanie
         {
-            int id = (int)comboBox1.SelectedItem; //zmiana na textbox?
+            decimal id = numericUpDown3.Value;
             string nazwa = textBox3.Text;
-            decimal telefon = numericUpDown2.Value;
+            int telefon = 0;
+            if (maskedTextBox2.Text == null)
+            {
+                MessageBox.Show("Wprowadź poprawne wartości");
+            }
+            else if (int.Parse(maskedTextBox2.Text) < 1)
+            {
+                MessageBox.Show("Wprowadź poprawne wartości");
+            }
+            else
+            {
+                telefon = int.Parse(maskedTextBox2.Text);
+            }
             string mail = textBox4.Text;
-            string kwerenda = "UPDATE Klient " + "SET nazwa='" + nazwa + "', telefon=" + telefon + ", adres_mail='" + mail + "'" + "WHERE ID_klient=" + id; //id w ''?
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+                if (nazwa.Length >10 && telefon >0 && mail.Length >10)
+                {
+                    try
+                    {
+                        SqlCommand cmd = new SqlCommand("UPDATE Klient SET nazwa='" + nazwa + "', telefon=" + telefon + ", adres_mail='" + mail + "'" + "WHERE ID_klient=" + id, connection);
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Wprowadź poprawne wartości");
+                }
+            }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //usuwanie
         {
-            int id = (int)comboBox1.SelectedItem;
-            string kwerenda = "DELETE FROM Klient WHERE ID_klient=" + id;//id w ''?
+            decimal id = numericUpDown3.Value; //usuń po id
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Klient WHERE ID_klient="+id+"", connection);
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e) //odśwież grid
+        {
+            SqlConnection connection = new SqlConnection(connectionString);//odśwież grid
+            var dataAdapter = new SqlDataAdapter("SELECT * FROM dbo.Klient", connection);
+            try
+            {
+                var commandBuilder = new SqlCommandBuilder(dataAdapter);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                dataGridView1.DataSource = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

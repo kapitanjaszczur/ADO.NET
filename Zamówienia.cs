@@ -49,18 +49,20 @@ namespace ADO
 
         private void RefreshOrdersData()
         {
-            string queryText = "SELECT * from [dbo].[Zamówienie]";
-            SqlConnection connection = new SqlConnection(_connectionString);
-            SqlDataAdapter adapter = new SqlDataAdapter(queryText, connection);
+            try
+            {
+                string queryText = "SELECT * from [dbo].[Zamówienie]";
+                SqlConnection connection = new SqlConnection(_connectionString);
+                SqlDataAdapter adapter = new SqlDataAdapter(queryText, connection);
 
-            _zamowienieDataSet = new DataSet();
-            adapter.Fill(_zamowienieDataSet, "Zamówienie");
-            var column = _zamowienieDataSet.Tables[0].Columns[0];
-            column.AutoIncrement = true;
-            DataColumn[] primaryKeyColumn = new DataColumn[] { _zamowienieDataSet.Tables[0].Columns[0] };
-            _zamowienieDataSet.Tables[0].PrimaryKey = primaryKeyColumn;
+                _zamowienieDataSet = new DataSet();
+                adapter.Fill(_zamowienieDataSet, "Zamówienie");
+                var column = _zamowienieDataSet.Tables[0].Columns[0];
+                column.AutoIncrement = true;
+                DataColumn[] primaryKeyColumn = new DataColumn[] { _zamowienieDataSet.Tables[0].Columns[0] };
+                _zamowienieDataSet.Tables[0].PrimaryKey = primaryKeyColumn;
 
-            string secondQuery = @"SELECT 
+                string secondQuery = @"SELECT 
                 zamowienie.ID_zamówienie as [Numer zamówienia], 
                 pracownik.imię + ' ' + pracownik.nazwisko as [Pracownik],
                 klient.nazwa as [Nazwa klienta],
@@ -77,50 +79,74 @@ namespace ADO
                 LEFT JOIN [dbo].[Typ_tlumaczen] typ_tlumaczenia ON typ_tlumaczenia.ID_typ_tlumaczenia = zamowienie.ID_typ_tlumaczenia
                 WHERE zamowienie.[usunięte] = 0";
 
-            adapter = new SqlDataAdapter(secondQuery, connection);
-            _zamowienieDisplayDataSet = new DataSet();
-            adapter.Fill(_zamowienieDisplayDataSet, "ZamówienieDisplay");
+                adapter = new SqlDataAdapter(secondQuery, connection);
+                _zamowienieDisplayDataSet = new DataSet();
+                adapter.Fill(_zamowienieDisplayDataSet, "ZamówienieDisplay");
 
-            dataGridView_orders.DataSource = _zamowienieDisplayDataSet.Tables[0];
+                dataGridView_orders.DataSource = _zamowienieDisplayDataSet.Tables[0];
 
-            dataGridView_orders.Columns[4].DefaultCellStyle.Format = "dd/MM/yyyy";
-            dataGridView_orders.Columns[5].DefaultCellStyle.Format = "dd/MM/yyyy";
-            dataGridView_orders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView_orders.Columns[4].DefaultCellStyle.Format = "dd/MM/yyyy";
+                dataGridView_orders.Columns[5].DefaultCellStyle.Format = "dd/MM/yyyy";
+                dataGridView_orders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd podczas pobierania danych zamówień", "Błąd");
+            }
         }
 
         private void RefreshEmployeesData()
         {
-            string queryText = @"SELECT [ID_pracownik] AS [ID], [imię] + ' ' + [nazwisko] AS [Pracownik] FROM [dbo].[Pracownik]";
-            var connectionString = ConfigurationManager.ConnectionStrings["ADO.Properties.Settings.MainConnectionString"];
-            SqlConnection connection = new SqlConnection(_connectionString);
-            SqlDataAdapter adapter = new SqlDataAdapter(queryText, connection);
+            try
+            {
+                string queryText = @"SELECT [ID_pracownik] AS [ID], [imię] + ' ' + [nazwisko] AS [Pracownik] FROM [dbo].[Pracownik]";
+                var connectionString = ConfigurationManager.ConnectionStrings["ADO.Properties.Settings.MainConnectionString"];
+                SqlConnection connection = new SqlConnection(_connectionString);
+                SqlDataAdapter adapter = new SqlDataAdapter(queryText, connection);
 
-            adapter = new SqlDataAdapter(queryText, connection);
-            _pracownicyDataSet = new DataSet();
-            adapter.Fill(_pracownicyDataSet, "Pracownicy");
+                adapter = new SqlDataAdapter(queryText, connection);
+                _pracownicyDataSet = new DataSet();
+                adapter.Fill(_pracownicyDataSet, "Pracownicy");
 
-            comboBox_employee.DataSource = _pracownicyDataSet.Tables[0];
-            comboBox_employee.ValueMember = "ID";
-            comboBox_employee.DisplayMember = "Pracownik";
+                comboBox_employee.DataSource = _pracownicyDataSet.Tables[0];
+                comboBox_employee.ValueMember = "ID";
+                comboBox_employee.DisplayMember = "Pracownik";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd podczas pobierania danych pracowników", "Błąd");
+            }
         }
 
         private void RefreshClientData()
         {
-            string queryText = @"SELECT [ID_klient] as [ID], [nazwa] as [Nazwa] FROM [dbo].[Klient]";
-            SqlConnection connection = new SqlConnection(_connectionString);
-            SqlDataAdapter adapter = new SqlDataAdapter(queryText, connection);
+            try
+            {
+                string queryText = @"SELECT [ID_klient] as [ID], [nazwa] as [Nazwa] FROM [dbo].[Klient]";
+                SqlConnection connection = new SqlConnection(_connectionString);
+                SqlDataAdapter adapter = new SqlDataAdapter(queryText, connection);
 
-            adapter = new SqlDataAdapter(queryText, connection);
-            _klienciDataSet = new DataSet();
-            adapter.Fill(_klienciDataSet, "Klienci");
+                adapter = new SqlDataAdapter(queryText, connection);
+                _klienciDataSet = new DataSet();
+                adapter.Fill(_klienciDataSet, "Klienci");
 
-            comboBox_client.DataSource = _klienciDataSet.Tables[0];
-            comboBox_client.ValueMember = "ID";
-            comboBox_client.DisplayMember = "Nazwa";
+                comboBox_client.DataSource = _klienciDataSet.Tables[0];
+                comboBox_client.ValueMember = "ID";
+                comboBox_client.DisplayMember = "Nazwa";
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd podczas pobierania danych klientów", "Błąd");
+            }
         }
 
         private void RefreshEmployeeLanguageData()
         {
+            if (comboBox_employee.SelectedIndex == -1)
+            {
+                return;
+            }
+
             string queryText = $@"SELECT prac.ID_język as [ID], slow.język as [Nazwa] FROM [dbo].[Język_pracownika] prac
                 LEFT JOIN [dbo].[Słownik_języków] slow ON slow.ID_język = prac.ID_język
                 WHERE prac.ID_pracownik = {comboBox_employee.SelectedValue}";
@@ -201,7 +227,6 @@ namespace ADO
         private void button_deleteOrder_Click(object sender, EventArgs e)
         {
             DeleteOrder();
-
         }
 
         private double CalculatePrice()

@@ -194,6 +194,7 @@ namespace ADO
             // 
             // button_insertOrder
             // 
+            this.button_insertOrder.Enabled = false;
             this.button_insertOrder.Location = new System.Drawing.Point(621, 252);
             this.button_insertOrder.Name = "button_insertOrder";
             this.button_insertOrder.Size = new System.Drawing.Size(245, 23);

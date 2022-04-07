@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -13,18 +14,18 @@ namespace ADO
         }
 
         private static Klient _instance;
-        readonly string connectionString = "Server=DESKTOP-JH1VST5\\SQLEXPRESS;Database=BT;Uid=DESKTOP-JH1VST5\\N;Pwd=;Trusted_Connection=True;";
+        readonly string connectionString = ConfigurationManager.ConnectionStrings["ADO.Properties.Settings.MainConnectionString"].ConnectionString;
 
         public static Klient GetInstance()
         {
-            if (_instance == null) _instance = new Klient();
+            if (_instance == null || _instance.IsDisposed) _instance = new Klient();
             return _instance;
         }
 
-        
+
         private void Klient_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -50,7 +51,8 @@ namespace ADO
             {
                 MessageBox.Show("Wprowadź poprawne wartości");
             }
-            else if (int.Parse(maskedTextBox1.Text) <1) {
+            else if (int.Parse(maskedTextBox1.Text) < 1)
+            {
                 MessageBox.Show("Wprowadź poprawne wartości");
             }
             else
@@ -60,7 +62,8 @@ namespace ADO
             string mail = textBox2.Text;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                if (nazwa.Length >10 && telefon >0 && mail.Length >10) {
+                if (nazwa.Length > 10 && telefon > 0 && mail.Length > 10)
+                {
                     try
                     {
                         SqlCommand cmd = new SqlCommand("INSERT INTO Klient VALUES ('" + nazwa + "', " + telefon + ", '" + mail + "');", connection);
@@ -76,7 +79,7 @@ namespace ADO
                 {
                     MessageBox.Show("Wprowadź poprawne wartości");
                 }
-                
+
             }
 
         }
@@ -102,7 +105,7 @@ namespace ADO
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
 
-                if (nazwa.Length >10 && telefon >0 && mail.Length >10)
+                if (nazwa.Length > 10 && telefon > 0 && mail.Length > 10)
                 {
                     try
                     {
@@ -129,7 +132,7 @@ namespace ADO
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("DELETE FROM Klient WHERE ID_klient="+id+"", connection);
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Klient WHERE ID_klient=" + id + "", connection);
                     connection.Open();
                     cmd.ExecuteNonQuery();
                 }

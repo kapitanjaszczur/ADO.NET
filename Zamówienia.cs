@@ -29,7 +29,10 @@ namespace ADO
 
         public static Zamówienia GetInstance()
         {
-            if (_instance == null) _instance = new Zamówienia();
+            if (_instance == null || _instance.IsDisposed)
+            {
+                _instance = new Zamówienia();
+            }
             return _instance;
         }
 
@@ -475,12 +478,13 @@ namespace ADO
                 SqlCommand command = new SqlCommand(commandText, connection);
                 SqlDataAdapter dataAdapter = new SqlDataAdapter();
 
+                var id_zam = dataGridView_orders.SelectedRows[0].Cells[0].Value;
                 dataAdapter.UpdateCommand = command;
-                var param = dataAdapter.UpdateCommand.Parameters.AddWithValue("@id", dataGridView_orders.SelectedRows[0].Cells[0].Value);
+                var param = dataAdapter.UpdateCommand.Parameters.AddWithValue("@id", id_zam);
                 param.Direction = ParameterDirection.Input;
                 param.SourceVersion = DataRowVersion.Original;
 
-                var dataRow = _zamowienieDataSet.Tables[0].Rows.Find(5);
+                var dataRow = _zamowienieDataSet.Tables[0].Rows.Find(id_zam);
 
                 var employee = comboBox_employee.SelectedValue;
                 var client = comboBox_client.SelectedValue;
@@ -542,7 +546,11 @@ namespace ADO
             if (IsCreateUpdateAllowed())
             {
                 button_insertOrder.Enabled = true;
-                button_edition.Enabled = true;
+
+                if (dataGridView_orders.SelectedRows.Count == 1)
+                {
+                    button_edition.Enabled = true;
+                }
             }
             else
             {

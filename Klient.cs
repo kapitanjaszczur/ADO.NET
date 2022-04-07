@@ -13,14 +13,15 @@ namespace ADO
         }
 
         private static Klient _instance;
+        readonly string connectionString = "Server=DESKTOP-JH1VST5\\SQLEXPRESS;Database=BT;Uid=DESKTOP-JH1VST5\\N;Pwd=;Trusted_Connection=True;";
+
         public static Klient GetInstance()
         {
             if (_instance == null) _instance = new Klient();
             return _instance;
         }
 
-        readonly string connectionString = "Server=DESKTOP-JH1VST5\\SQLEXPRESS;Database=BT;Uid=DESKTOP-JH1VST5\\N;Pwd=;Trusted_Connection=True;";
-
+        
         private void Klient_Load(object sender, EventArgs e)
         {
             
@@ -63,7 +64,7 @@ namespace ADO
                     try
                     {
                         SqlCommand cmd = new SqlCommand("INSERT INTO Klient VALUES ('" + nazwa + "', " + telefon + ", '" + mail + "');", connection);
-                        //connection.Open();
+                        connection.Open();
                         cmd.ExecuteNonQuery();
                     }
                     catch (Exception ex)
@@ -105,7 +106,7 @@ namespace ADO
                 {
                     try
                     {
-                        SqlCommand cmd = new SqlCommand("UPDATE Klient " + "SET nazwa='" + nazwa + "', telefon=" + telefon + ", adres_mail='" + mail + "'" + "WHERE ID_klient=" + id, connection);
+                        SqlCommand cmd = new SqlCommand("UPDATE Klient SET nazwa='" + nazwa + "', telefon=" + telefon + ", adres_mail='" + mail + "'" + "WHERE ID_klient=" + id, connection);
                         connection.Open();
                         cmd.ExecuteNonQuery();
                     }
@@ -123,7 +124,7 @@ namespace ADO
 
         private void button3_Click(object sender, EventArgs e) //usuwanie
         {
-            /*decimal id = numericUpDown3.Value; //usuń po id
+            decimal id = numericUpDown3.Value; //usuń po id
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
@@ -136,23 +137,10 @@ namespace ADO
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }*/
-
-            string cb = comboBox1.SelectedItem.ToString(); //usuń po nazwie
-            using (SqlConnection connection = new SqlConnection(connectionString))
-                try
-            {
-                SqlCommand cmd = new SqlCommand("DELETE FROM Klient WHERE nazwa='" + cb + "'", connection);
-                connection.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
 
-        private void button4_Click(object sender, EventArgs e) //odśwież grid i combobox
+        private void button4_Click(object sender, EventArgs e) //odśwież grid
         {
             SqlConnection connection = new SqlConnection(connectionString);//odśwież grid
             var dataAdapter = new SqlDataAdapter("SELECT * FROM dbo.Klient", connection);
@@ -166,20 +154,6 @@ namespace ADO
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-
-            using (SqlConnection sqlConnection = new SqlConnection(connectionString))//odśwież combobox
-            {
-                SqlCommand sqlCmd = new SqlCommand("SELECT ID_klient, nazwa FROM dbo.Klient", sqlConnection);
-                sqlConnection.Open();
-                SqlDataReader sqlReader = sqlCmd.ExecuteReader();
-                comboBox1.Items.Clear();
-                while (sqlReader.Read())
-                {
-                    comboBox1.Items.Add(sqlReader["nazwa"].ToString());
-                }
-
-                sqlReader.Close();
             }
         }
     }

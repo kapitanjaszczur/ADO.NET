@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ADO
@@ -19,16 +14,16 @@ namespace ADO
         }
 
         private static Pracownik _instance;
-        readonly string connectionString = "Server=DESKTOP-JH1VST5\\SQLEXPRESS;Database=BT;Uid=DESKTOP-JH1VST5\\Komputer;Pwd=;Trusted_Connection=True;";
+        readonly string connectionString = ConfigurationManager.ConnectionStrings["ADO.Properties.Settings.MainConnectionString"].ConnectionString;
         public static Pracownik GetInstance()
         {
-            if (_instance == null) _instance = new Pracownik();
+            if (_instance == null || _instance.IsDisposed) _instance = new Pracownik();
             return _instance;
         }
 
         private void Języki_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e) //dodaj pracownika
@@ -54,7 +49,7 @@ namespace ADO
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Pracownik VALUES ('" + imie + "', '"+nazwisko+"', " + telefon + ", '" + mail + "');", connection);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Pracownik VALUES ('" + imie + "', '" + nazwisko + "', " + telefon + ", '" + mail + "');", connection);
                     connection.Open();
                     cmd.ExecuteNonQuery();
                 }
@@ -91,7 +86,7 @@ namespace ADO
                 {
                     SqlCommand cmd = new SqlCommand("UPDATE Pracownik " +
                                                     "SET imię='" + imie + "', nazwisko='" + nazwisko + "', telefon=" + telefon + ", adres_mail='" + mail + "' " +
-                                                    "WHERE ID_pracownik="+id, connection);
+                                                    "WHERE ID_pracownik=" + id, connection);
                     connection.Open();
                     cmd.ExecuteNonQuery();
                 }
@@ -159,7 +154,7 @@ namespace ADO
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Język_pracownika VALUES ("+id_prac+", "+id_język+", 0);", connection);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Język_pracownika VALUES (" + id_prac + ", " + id_język + ", 0);", connection);
                     connection.Open();
                     cmd.ExecuteNonQuery();
                 }
@@ -197,7 +192,7 @@ namespace ADO
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Słownik_języków VALUES ('"+język+"', 'C2');", connection);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Słownik_języków VALUES ('" + język + "', 'C2');", connection);
                     connection.Open();
                     cmd.ExecuteNonQuery();
                 }

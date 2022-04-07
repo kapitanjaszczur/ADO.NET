@@ -436,11 +436,12 @@ namespace ADO
                 SqlDataAdapter dataAdapter = new SqlDataAdapter();
 
                 dataAdapter.UpdateCommand = command;
+                var id_zam = dataGridView_orders.SelectedRows[0].Cells[0].Value;
                 var param = dataAdapter.UpdateCommand.Parameters.AddWithValue("@id", dataGridView_orders.SelectedRows[0].Cells[0].Value);
                 param.Direction = ParameterDirection.Input;
                 param.SourceVersion = DataRowVersion.Original;
 
-                var dataRow = _zamowienieDataSet.Tables[0].Rows.Find(5);
+                var dataRow = _zamowienieDataSet.Tables[0].Rows.Find(id_zam);
                 dataRow["Usunięte"] = 1;
 
                 dataAdapter.Update(_zamowienieDataSet, "Zamówienie");
